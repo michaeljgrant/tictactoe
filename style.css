@@ -1,0 +1,28 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+main {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.gameboard {
+    display: grid;
+    grid-template-areas: 
+    "board board board"
+    "board board board"
+    "board board board"
+    ;  
+    justify-content:center;
+    max-width: 300px;
+}
+.spaceOnBoard {
+    grid-area: "board";
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
