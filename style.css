@@ -14,7 +14,8 @@ main {
     grid-template-areas:
     "title" 
     "scoreboard"
-    "gameboard";
+    "gameboard"
+    "footer";
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -71,6 +72,11 @@ h1 {
     border: 0px;
     margin: 0px;
     text-align: center;;
+}
+.iframeContainer {
+    grid-area: "footer";
+    opacity: 0.5;
+    margin: 0 auto;
 }
 
 .gameboard {

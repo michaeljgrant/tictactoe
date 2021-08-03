@@ -30,6 +30,10 @@ const spaceSelected = (event) => {
         return;
       }
       currentPlayer = currentPlayer === player2 ? player1 : player2;
+      warningText.innerText = `It is ${currentPlayer}'s turn!`;
+      setTimeout(()=>{
+        warningText.innerText = "";
+      }, 2000);
     }
 
 for (space of physicalBoard) {
@@ -119,8 +123,8 @@ const playerDraw = () => {
       if (gameboard[i] !== "") draw++;
     });
     if (draw === 9) {
-      text.innerText = `Draw`;
-      restart();
+      text.innerText = `It's a Draw!`;
+      endOfRound();
     }
   };
  
@@ -134,6 +138,10 @@ const endOfRound = () => {
     }
     text.innerText = "";
     currentPlayer = currentPlayer === player2 ? player1 : player2;
+    warningText.innerText = `It is ${currentPlayer}'s turn!`;
+      setTimeout(()=>{
+        warningText.innerText = "";
+      }, 2000);
       }, 1500);
 }
 
