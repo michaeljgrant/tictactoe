@@ -13,13 +13,34 @@
 <body>
     <main>
         <header>
+
             <h1>Tic-Tac-Toe</h1>
+        
             <p id="textBox"></p>
+            
             <div id="buttonContainer">
-            <button id="restart">Restart</button>
+                <button id="restart">Restart</button>
             </div>
+
         </header>
+
+        <div class="scoreCard">
+
+            <div class="scoreBoxes">
+                Player X
+                <span id="playerX">0</span>
+            </div>
+
+            <div class="scoreBoxes">
+                Player O
+                <span id="playerO">0</span>
+            </div>
+
+        </div>
+        <p id="warning"></p>
+
         <div class="gameboard">
+
             <div class="spaceOnBoard" data-index=0></div>
             <div class="spaceOnBoard" data-index=1></div>
             <div class="spaceOnBoard" data-index=2></div>
@@ -29,6 +50,7 @@
             <div class="spaceOnBoard" data-index=6></div>
             <div class="spaceOnBoard" data-index=7></div>
             <div class="spaceOnBoard" data-index=8></div>
+
         </div>
     </main>
 </body>
