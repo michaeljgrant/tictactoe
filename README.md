@@ -3,7 +3,7 @@ General Assembly Project 1
 
 First Project for GA Software Engineering Immersive - Flex.
 
-##Link to page
+## Link to page
 [Tic-Tac-Toe](https://michaeljgrant.github.io/tictactoe/)
 
 ## Mockups and win-states
