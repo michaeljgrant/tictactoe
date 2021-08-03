@@ -33,6 +33,11 @@ for (space of physicalBoard) {
 const playerWon = () => {
     if (gameboard[0] === currentPlayer) {
       if (gameboard[1] === currentPlayer && gameboard[2] === currentPlayer) {
+        if(currentPlayer = player1){
+          scoreboardX.innerText ++;
+        } else {
+          scoreboardO.innerText ++;
+        }
         return true;
       }
       if (gameboard[3] === currentPlayer && gameboard[6] === currentPlayer) {
@@ -77,27 +82,15 @@ const playerDraw = () => {
 
 const restart = () => {
     setTimeout(() => {
-     for (arraySpace of gameboard) {
-         arraySpace = "";
-     }
+      gameboard.forEach((space, i) => {
+        gameboard[i] = "";
+      });
       for (spaces of testPhys){
           spaces.innerText = "";
       }
-
+      text.innerText = "";
+      currentPlayer = currentPlayer === player2 ? player1 : player2;
     }, 3000);
   };
 
 restartBtn.addEventListener('click', restart);
-
-
-// function passes indexes and compares if they match to declare win or not
-//  
-
-
-
-// try currentPlayer = "";
-// have function that excecutes inserting based on currentPlayer
-// spaceSelect "if currentPlayer = x" execute X block else execute O block then
-//togglePlayer()
-// function to toggle currentPlayer executed at end of turn function
-// eg togglePlayer > if currentPlayer = playerX currentPlayer = playerO
