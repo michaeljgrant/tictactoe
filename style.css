@@ -20,17 +20,19 @@ main {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    row-gap: 50px;
+    row-gap: 30px;
 }
 header {
     grid-area: "title";
     justify-content: center;
+    height: fit-content;
 }
 h1 {
   font-family: "Monoton", cursive;
     color: aquamarine;
     text-align: center;
     font-size: 60px;
+    margin: 10px;
 }
 .scoreCard {
     grid-area: "scoreboard";
@@ -38,7 +40,7 @@ h1 {
     color: aquamarine;
     margin: 0 auto;
     font-size: 25px;
-    height: 30px;
+    height: fit-content;
 }
 .scoreBoxes {
     display: inline-block;
@@ -46,10 +48,12 @@ h1 {
     width: 150px;
 }
 #playerX {
+  
    display: block;
    font-family: "Monoton", cursive;
 }
 #playerO {
+  
     display: block;
     font-family: "Monoton", cursive;
 }
@@ -60,16 +64,7 @@ h1 {
     padding-right: 30px;
 
 }
-#textBox {
-    color: aquamarine;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 55px;
-    height: 50px;
-    padding: 0;
-    margin: 10px;
-    border: 0;
-    text-align: center;
-}
+
 #warning {
     color: aquamarine;
     font-family: 'Permanent Marker', cursive;
