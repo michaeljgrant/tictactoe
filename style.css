@@ -50,8 +50,12 @@ h1 {
 #playerO {
     display: block;
 }
-.buttonContainer {
+
+#buttonContainer {
     margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+
 }
 #textBox {
     color: aquamarine;
@@ -108,7 +112,9 @@ h1 {
     text-align: center;
 }
 
-button {
+
+
+#restart {
   cursor:pointer;
   margin-left:5px;
   margin-bottom:15px;
@@ -117,8 +123,8 @@ button {
   font-size:20px;
   font-family: Helvetica, Arial, Sans-Serif;
   text-decoration:none;
-  font-weight:bold;
-  color:#7fbb98;
+  font-weight:lighter;
+  color:rgba(69, 67, 70);
   &:visited {
     color: darken(#7fbb98);
   }
@@ -128,33 +134,33 @@ button {
   display:inline-block;
   width:auto;
   background: linear-gradient(to bottom,
-    saturate(lighten(#7fbb98,15%),35%) 0%,
-    saturate(lighten(#7fbb98,12%),15%) 26%,
-    #7fbb98 100%);
+    saturate(lighten(rgba(166, 157, 141),15%),35%) 0%,
+    saturate(lighten(rgba(166, 157, 141),12%),15%) 26%,
+    rgba(166, 157, 141) 100%);
   border-radius:5px;
-  border-top:1px solid lighten(#7fbb98,22%);
-  border-bottom:1px solid lighten(#7fbb98,20%);
+  border-top:1px solid lighten(rgba(166, 157, 141),22%);
+  border-bottom:1px solid lighten(rgba(166, 157, 141),20%);
  top:15px;
   transition:all (.06s) ease-out;
   position:relative;
 }
-button:hover {
+#restart:hover {
   background: linear-gradient(to bottom,
-    lighten(saturate(lighten(#7fbb98,15%),35%),7%) 0%,
-    lighten(saturate(lighten(#7fbb98,12%),15%),7%) 26%,
-    lighten(#7fbb98,7%) 100%);
+    lighten(saturate(lighten(rgba(166, 157, 141),15%),35%),7%) 0%,
+    lighten(saturate(lighten(rgba(166, 157, 141),12%),15%),7%) 26%,
+    lighten(rgba(166, 157, 141),7%) 100%);
 }
-button:active {
+#restart:active {
   top:20px;
-       text-shadow:0 -2px 0 darken(#7fbb98,0%),0 1px 1px lighten(#7fbb98,20%), 0 0 4px white ;
-  color:lighten(#7fbb98,45%);
+       text-shadow:0 -2px 0 darken(rgba(166, 157, 141),0%),0 1px 1px lighten(rgba(166, 157, 141),20%), 0 0 4px white ;
+  color:lighten(rgba(166, 157, 141),45%);
   &:before {
     top:0;
     box-shadow: 0 3px 3px rgba(0,0,0,.7),0 3px 9px rgba(0,0,0,.2);
 
   }
 }
-button:before {
+#restart:before {
   display:inline-block;
   content:'';
   position:absolute;
@@ -165,8 +171,147 @@ button:before {
   border-radius:5px;
   height:(15)px;
   background: linear-gradient(to top,
-    saturate(darken(#7fbb98,40%),15%) 0%,
-    saturate(darken(#7fbb98,25%),10%) (20)px);
+    saturate(darken(rgba(166, 157, 141),40%),15%) 0%,
+    saturate(darken(rgba(166, 157, 141),25%),10%) (20)px);
+  transition:all ((.06*1.3) + s) ease-out;
+  box-shadow:
+    0 1px 0 2px rgba(0,0,0,.3),
+    0 5px (5px*.4px) rgba(0,0,0,.5),
+    0 (5px*1.8px) 9px rgba(0,0,0,.2);
+    
+  
+}
+
+
+
+#twoPlayer {
+  cursor:pointer;
+  margin-left:5px;
+  margin-bottom:15px;
+  text-shadow:0 -2px 0 darken(#7fbb98,20%),0 1px 1px lighten(#7fbb98,20%) ;
+  box-sizing:border-box;
+  font-size:20px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration:none;
+  font-weight:lighter;
+  color:rgba(69, 67, 70);
+  &:visited {
+    color: darken(#7fbb98);
+  }
+  height:20px;
+  line-height:20px;
+  padding: 0 12px);
+  display:inline-block;
+  width:auto;
+  background: linear-gradient(to bottom,
+    saturate(lighten(rgba(166, 157, 141),15%),35%) 0%,
+    saturate(lighten(rgba(166, 157, 141),12%),15%) 26%,
+    rgba(166, 157, 141) 100%);
+  border-radius:5px;
+  border-top:1px solid lighten(rgba(166, 157, 141),22%);
+  border-bottom:1px solid lighten(rgba(166, 157, 141),20%);
+ top:15px;
+  transition:all (.06s) ease-out;
+  position:relative;
+}
+#twoPlayer:hover {
+  background: linear-gradient(to bottom,
+    lighten(saturate(lighten(rgba(166, 157, 141),15%),35%),7%) 0%,
+    lighten(saturate(lighten(rgba(166, 157, 141),12%),15%),7%) 26%,
+    lighten(rgba(166, 157, 141),7%) 100%);
+}
+#twoPlayer:active {
+  top:20px;
+       text-shadow:0 -2px 0 darken(rgba(166, 157, 141),0%),0 1px 1px lighten(rgba(166, 157, 141),20%), 0 0 4px white ;
+  color:lighten(rgba(166, 157, 141),45%);
+  &:before {
+    top:0;
+    box-shadow: 0 3px 3px rgba(0,0,0,.7),0 3px 9px rgba(0,0,0,.2);
+
+  }
+}
+#twoPlayer:before {
+  display:inline-block;
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  z-index:-1;
+  top: (15)px;
+  border-radius:5px;
+  height:(15)px;
+  background: linear-gradient(to top,
+    saturate(darken(rgba(166, 157, 141),40%),15%) 0%,
+    saturate(darken(rgba(166, 157, 141),25%),10%) (20)px);
+  transition:all ((.06*1.3) + s) ease-out;
+  box-shadow:
+    0 1px 0 2px rgba(0,0,0,.3),
+    0 5px (5px*.4px) rgba(0,0,0,.5),
+    0 (5px*1.8px) 9px rgba(0,0,0,.2);
+    
+  
+}
+
+
+#vsComp {
+  cursor:pointer;
+  margin-left:5px;
+  margin-bottom:15px;
+  text-shadow:0 -2px 0 darken(#7fbb98,20%),0 1px 1px lighten(#7fbb98,20%) ;
+  box-sizing:border-box;
+  font-size:20px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration:none;
+  font-weight:lighter;
+  color:rgba(69, 67, 70);
+  &:visited {
+    color: darken(#7fbb98);
+  }
+  height:20px;
+  line-height:20px;
+  padding: 0 12px);
+  display:inline-block;
+  width:auto;
+  background: linear-gradient(to bottom,
+    saturate(lighten(rgba(166, 157, 141),15%),35%) 0%,
+    saturate(lighten(rgba(166, 157, 141),12%),15%) 26%,
+    rgba(166, 157, 141) 100%);
+  border-radius:5px;
+  border-top:1px solid lighten(rgba(166, 157, 141),22%);
+  border-bottom:1px solid lighten(rgba(166, 157, 141),20%);
+ top:15px;
+  transition:all (.06s) ease-out;
+  position:relative;
+}
+#vsComp:hover {
+  background: linear-gradient(to bottom,
+    lighten(saturate(lighten(rgba(166, 157, 141),15%),35%),7%) 0%,
+    lighten(saturate(lighten(rgba(166, 157, 141),12%),15%),7%) 26%,
+    lighten(rgba(166, 157, 141),7%) 100%);
+}
+#vsComp:active {
+  top:20px;
+       text-shadow:0 -2px 0 darken(rgba(166, 157, 141),0%),0 1px 1px lighten(rgba(166, 157, 141),20%), 0 0 4px white ;
+  color:lighten(rgba(166, 157, 141),45%);
+  &:before {
+    top:0;
+    box-shadow: 0 3px 3px rgba(0,0,0,.7),0 3px 9px rgba(0,0,0,.2);
+
+  }
+}
+#vsComp:before {
+  display:inline-block;
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  z-index:-1;
+  top: (15)px;
+  border-radius:5px;
+  height:(15)px;
+  background: linear-gradient(to top,
+    saturate(darken(rgba(166, 157, 141),40%),15%) 0%,
+    saturate(darken(rgba(166, 157, 141),25%),10%) (20)px);
   transition:all ((.06*1.3) + s) ease-out;
   box-shadow:
     0 1px 0 2px rgba(0,0,0,.3),
