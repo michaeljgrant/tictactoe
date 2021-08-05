@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Permanent+Marker&family=Staatliches&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -26,7 +27,7 @@ header {
     justify-content: center;
 }
 h1 {
-    font-family: "Permanent Marker", cursive;
+  font-family: "Monoton", cursive;
     color: aquamarine;
     text-align: center;
     font-size: 60px;
@@ -46,9 +47,11 @@ h1 {
 }
 #playerX {
    display: block;
+   font-family: "Monoton", cursive;
 }
 #playerO {
     display: block;
+    font-family: "Monoton", cursive;
 }
 
 #buttonContainer {
@@ -70,8 +73,8 @@ h1 {
 #warning {
     color: aquamarine;
     font-family: 'Permanent Marker', cursive;
-    font-size: 15px;
-    height: 15px;
+    font-size: 20px;
+    height: 20px;
     padding: 0px;
     border: 0px;
     margin: 0px;
@@ -103,7 +106,7 @@ h1 {
     width: 100px;
     color:aquamarine;
     font-size: 80px;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Staatliches', cursive;
     border: 1px solid lightgray;
     box-shadow: inset 6px 6px 6px rgba(253, 251, 251, 0.16), 6px 3px 6px rgba(253, 251, 251, 0.45);
     border-radius: 10px;
@@ -118,15 +121,15 @@ h1 {
   cursor:pointer;
   margin-left:5px;
   margin-bottom:15px;
-  text-shadow:0 -2px 0 darken(#7fbb98,20%),0 1px 1px lighten(#7fbb98,20%) ;
+  text-shadow:0 -2px 0 darken(rgba(166, 157, 141),20%),0 1px 1px lighten(#7fbb98,20%) ;
   box-sizing:border-box;
   font-size:20px;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: 'Staatliches', cursive;
   text-decoration:none;
   font-weight:lighter;
   color:rgba(69, 67, 70);
   &:visited {
-    color: darken(#7fbb98);
+    color: darken(rgba(166, 157, 141));
   }
   height:20px;
   line-height:20px;
@@ -139,7 +142,7 @@ h1 {
     rgba(166, 157, 141) 100%);
   border-radius:5px;
   border-top:1px solid lighten(rgba(166, 157, 141),22%);
-  border-bottom:1px solid lighten(rgba(166, 157, 141),20%);
+  border-bottom:5px solid lighten(rgba(166, 157, 141),20%);
  top:15px;
   transition:all (.06s) ease-out;
   position:relative;
@@ -156,7 +159,7 @@ h1 {
   color:lighten(rgba(166, 157, 141),45%);
   &:before {
     top:0;
-    box-shadow: 0 3px 3px rgba(0,0,0,.7),0 3px 9px rgba(0,0,0,.2);
+    box-shadow: 0 10px 5px rgba(248,248,248,.7),0 3px 9px rgba(248,248,248,.2);
 
   }
 }
@@ -175,9 +178,9 @@ h1 {
     saturate(darken(rgba(166, 157, 141),25%),10%) (20)px);
   transition:all ((.06*1.3) + s) ease-out;
   box-shadow:
-    0 1px 0 2px rgba(0,0,0,.3),
-    0 5px (5px*.4px) rgba(0,0,0,.5),
-    0 (5px*1.8px) 9px rgba(0,0,0,.2);
+    0 10px 5px 2px rgba(241, 237, 237, 0.3),
+    0 10px (5px*.4px) rgba(250, 249, 249, 0.5),
+    0 (5px*1.8px) 9px rgba(248, 248, 248, 0.2);
     
   
 }
@@ -191,7 +194,7 @@ h1 {
   text-shadow:0 -2px 0 darken(#7fbb98,20%),0 1px 1px lighten(#7fbb98,20%) ;
   box-sizing:border-box;
   font-size:20px;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: 'Staatliches', cursive;
   text-decoration:none;
   font-weight:lighter;
   color:rgba(69, 67, 70);
@@ -260,7 +263,7 @@ h1 {
   text-shadow:0 -2px 0 darken(#7fbb98,20%),0 1px 1px lighten(#7fbb98,20%) ;
   box-sizing:border-box;
   font-size:20px;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: 'Staatliches', cursive;
   text-decoration:none;
   font-weight:lighter;
   color:rgba(69, 67, 70);
