@@ -97,10 +97,11 @@ h1 {
     grid-area: "board";
     height: 100px;
     width: 100px;
-    color: cyan;
+    color:aquamarine;
     font-size: 80px;
     font-family: 'Permanent Marker', cursive;
     border: 1px solid lightgray;
+    box-shadow: inset 6px 6px 6px rgba(253, 251, 251, 0.16), 6px 3px 6px rgba(253, 251, 251, 0.45);
     border-radius: 10px;
     justify-content: center;
     align-items: center;
