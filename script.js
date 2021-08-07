@@ -47,20 +47,20 @@ function twoPlayer() {
     }
     event.target.innerText = currentPlayer;
     gameboard[selectedIndex] = event.target.innerText;
-    currentPlayer = currentPlayer === player2 ? player1 : player2;
-    warningText.innerText = `It is ${currentPlayer}'s turn!`;
+    
     // Does playerWon return as true?
     if (playerWon()) {
       warningText.innerText = `${currentPlayer} has won!`;
       endTwoPlayer();
       return;
     }
-    // Does the function of playerDraw return as true?
     if (playerDraw()) {
+      endTwoPlayer();
       return;
     }
     // If breaks not hit, change player and declare whose turn it is
-
+    currentPlayer = currentPlayer === player2 ? player1 : player2;
+    warningText.innerText = `It is ${currentPlayer}'s turn!`;
 
 
   }
