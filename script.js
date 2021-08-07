@@ -26,7 +26,7 @@ twoPlayerBoard.addEventListener('click', twoPlayer);
 // // // // // // 
 
 function twoPlayer() {
-  
+
 // current players turn displayed on start of game
   warningText.innerText = `It is ${currentPlayer}'s turn!`
 
@@ -47,10 +47,12 @@ function twoPlayer() {
     }
     event.target.innerText = currentPlayer;
     gameboard[selectedIndex] = event.target.innerText;
+    currentPlayer = currentPlayer === player2 ? player1 : player2;
+    warningText.innerText = `It is ${currentPlayer}'s turn!`;
 // Does playerWon return as true?
     if (playerWon()) {
       warningText.innerText = `${currentPlayer} has won!`;
-      endOfRound();
+      endTwoPlayer();
       return;
     }
 // Does the function of playerDraw return as true?
@@ -58,8 +60,8 @@ function twoPlayer() {
       return;
     }
 // If breaks not hit, change player and declare whose turn it is
-    currentPlayer = currentPlayer === player2 ? player1 : player2;
-    warningText.innerText = `It is ${currentPlayer}'s turn!`;
+    
+    
 
   }
 
@@ -143,12 +145,13 @@ function twoPlayer() {
       if (gameboard[i] !== "") draw++;
     });
     if (draw === 9) {
+      warningText.innerText = "";
       warningText.innerText = `It's a Draw!`;
-      endOfRound();
+      endTwoPlayer();
     }
   };
 
-  function endOfRound() {
+  function endTwoPlayer() {
     setTimeout(() => {
       gameboard.forEach((space, i) => {
         gameboard[i] = "";
@@ -207,24 +210,34 @@ function versusComp() {
 
   function compTurn() {
     let randomIndex = Math.floor(Math.random() * (boardSpaces.length) + 1);
+    
     if (gameboard[randomIndex] === "") {
       gameboard[randomIndex] = currentPlayer;
       boardSpaces[randomIndex].innerText = currentPlayer;
       console.log(gameboard);
-      if (playerWon()) {
-        text.innerText = `${currentPlayer} has won!`;
+      if (vsCompPlayerWon()) {
+        warningText.innerText = `${currentPlayer} has won!`;
         endOfRound();
         return;
       }
-      if (playerDraw()) {
+      if (vsCompplayerDraw()) {
         return;
       }
       currentPlayer = currentPlayer === player2 ? player1 : player2;
       warningText.innerText = `It is ${currentPlayer}'s turn!`;
 
-    } else {
+    } else if (gameboard !== "") {
+      if (vsCompPlayerWon()) {
+        warningText.innerText = `${currentPlayer} has won!`;
+        endOfRound();
+        return;
+      }
+      if (vsCompplayerDraw()) {
+        return;
+      }
       compTurn()
     }
+    
 
   }
 
@@ -240,19 +253,19 @@ function versusComp() {
     }
     event.target.innerText = currentPlayer;
     gameboard[selectedIndex] = event.target.innerText;
-    if (playerWon()) {
-      text.innerText = `${currentPlayer} has won!`;
+    if (vsCompPlayerWon()) {
+      warningText.innerText = `${currentPlayer} has won!`;
       endOfRound();
       return;
     };
 
-    if (playerDraw()) {
+    if (vsCompplayerDraw()) {
       return;
-    } else {
+    }
       currentPlayer = currentPlayer === player2 ? player1 : player2;
       warningText.innerText = `It is ${currentPlayer}'s turn!`;
       compTurn()
-    };
+
 
   };
 
@@ -260,7 +273,7 @@ function versusComp() {
 
 
   // determines winner 
-  function playerWon() {
+  function vsCompPlayerWon() {
     if (gameboard[0] === currentPlayer) {
       if (gameboard[1] === currentPlayer && gameboard[2] === currentPlayer) {
         if (currentPlayer === player1) {
@@ -333,13 +346,14 @@ function versusComp() {
     }
   };
 
-  function playerDraw() {
+  function vsCompplayerDraw() {
     let draw = 0;
     gameboard.forEach((space, i) => {
       if (gameboard[i] !== "") draw++;
     });
     if (draw === 9) {
-      text.innerText = `It's a Draw!`;
+      warningText.innerText = "";
+      warningText.innerText = `It's a Draw!`;
       endOfRound();
     }
   };
@@ -353,7 +367,7 @@ function versusComp() {
       for (spaces of boardSpaces) {
         spaces.innerText = "";
       }
-      text.innerText = "";
+      currentPlayer = player1;
       warningText.innerText = `It is ${currentPlayer}'s turn!`;
     }, 2500);
   }
@@ -369,7 +383,6 @@ function versusComp() {
     for (spaces of boardSpaces) {
       spaces.innerText = "";
     }
-    text.innerText = "";
     currentPlayer = player1;
     scoreboardO.innerText = "0";
     scoreboardX.innerText = "0";

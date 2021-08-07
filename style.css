@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Permanent+Marker&family=Staatliches&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Permanent+Marker&family=Staatliches&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -36,7 +34,7 @@ h1 {
 }
 .scoreCard {
     grid-area: "scoreboard";
-    font-family: "Permanent Marker", cursive;
+    font-family: 'Orbitron', sans-serif;
     color: aquamarine;
     margin: 0 auto;
     font-size: 25px;
@@ -67,7 +65,7 @@ h1 {
 
 #warning {
     color: aquamarine;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     height: 20px;
     padding: 0px;
@@ -113,6 +111,7 @@ h1 {
 
 
 #restart {
+  background-color: black;
   cursor:pointer;
   margin-left:5px;
   margin-bottom:15px;
@@ -122,7 +121,7 @@ h1 {
   font-family: 'Staatliches', cursive;
   text-decoration:none;
   font-weight:lighter;
-  color:rgba(69, 67, 70);
+  color: aquamarine;
   &:visited {
     color: darken(rgba(166, 157, 141));
   }
@@ -183,6 +182,7 @@ h1 {
 
 
 #twoPlayer {
+  background-color: black;
   cursor:pointer;
   margin-left:5px;
   margin-bottom:15px;
@@ -192,7 +192,7 @@ h1 {
   font-family: 'Staatliches', cursive;
   text-decoration:none;
   font-weight:lighter;
-  color:rgba(69, 67, 70);
+  color:aquamarine;
   &:visited {
     color: darken(#7fbb98);
   }
@@ -252,6 +252,7 @@ h1 {
 
 
 #vsComp {
+  background-color: black;
   cursor:pointer;
   margin-left:5px;
   margin-bottom:15px;
@@ -261,7 +262,7 @@ h1 {
   font-family: 'Staatliches', cursive;
   text-decoration:none;
   font-weight:lighter;
-  color:rgba(69, 67, 70);
+  color:aquamarine;
   &:visited {
     color: darken(#7fbb98);
   }
