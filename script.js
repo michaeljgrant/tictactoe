@@ -49,13 +49,13 @@ function twoPlayer() {
     gameboard[selectedIndex] = event.target.innerText;
     
     // Does playerWon return as true?
+ 
     if (playerWon()) {
       warningText.innerText = `${currentPlayer} has won!`;
       endTwoPlayer();
       return;
     }
     if (playerDraw()) {
-      endTwoPlayer();
       return;
     }
     // If breaks not hit, change player and declare whose turn it is
@@ -148,7 +148,8 @@ function twoPlayer() {
       warningText.innerText = "";
       warningText.innerText = `It's a Draw!`;
       endTwoPlayer();
-    }
+      return true;
+    } 
   };
 
   function endTwoPlayer() {
