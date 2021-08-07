@@ -45,6 +45,7 @@ h1 {
     text-align: center;
     width: 150px;
 }
+
 #playerX {
   
    display: block;
@@ -107,8 +108,9 @@ h1 {
     align-items: center;
     text-align: center;
 }
-
-
+.spaceOnBoard:hover {
+   background-color: rgba(127, 255, 212, 0.7);
+}
 
 #restart {
   background-color: black;
