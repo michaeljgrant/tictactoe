@@ -27,15 +27,15 @@ twoPlayerBoard.addEventListener('click', twoPlayer);
 
 function twoPlayer() {
 
-// current players turn displayed on start of game
+  // current players turn displayed on start of game
   warningText.innerText = `It is ${currentPlayer}'s turn!`
 
-// remove listeners from buttons - only restart has click functionality
+  // remove listeners from buttons - only restart has click functionality
   vsComp.removeEventListener('click', versusComp);
   twoPlayerBoard.removeEventListener('click', twoPlayer);
 
 
-// function for box selected by players
+  // function for box selected by players
   const spaceSelected = (event) => {
     let selectedIndex = event.target.dataset.index;
     if (event.target.innerText) {
@@ -49,23 +49,23 @@ function twoPlayer() {
     gameboard[selectedIndex] = event.target.innerText;
     currentPlayer = currentPlayer === player2 ? player1 : player2;
     warningText.innerText = `It is ${currentPlayer}'s turn!`;
-// Does playerWon return as true?
+    // Does playerWon return as true?
     if (playerWon()) {
       warningText.innerText = `${currentPlayer} has won!`;
       endTwoPlayer();
       return;
     }
-// Does the function of playerDraw return as true?
+    // Does the function of playerDraw return as true?
     if (playerDraw()) {
       return;
     }
-// If breaks not hit, change player and declare whose turn it is
-    
-    
+    // If breaks not hit, change player and declare whose turn it is
+
+
 
   }
 
-// Determine winner
+  // Determine winner
   function playerWon() {
     if (gameboard[0] === currentPlayer) {
       if (gameboard[1] === currentPlayer && gameboard[2] === currentPlayer) {
@@ -210,7 +210,7 @@ function versusComp() {
 
   function compTurn() {
     let randomIndex = Math.floor(Math.random() * (boardSpaces.length) + 1);
-    
+
     if (gameboard[randomIndex] === "") {
       gameboard[randomIndex] = currentPlayer;
       boardSpaces[randomIndex].innerText = currentPlayer;
@@ -237,7 +237,7 @@ function versusComp() {
       }
       compTurn()
     }
-    
+
 
   }
 
@@ -262,9 +262,9 @@ function versusComp() {
     if (vsCompplayerDraw()) {
       return;
     }
-      currentPlayer = currentPlayer === player2 ? player1 : player2;
-      warningText.innerText = `It is ${currentPlayer}'s turn!`;
-      compTurn()
+    currentPlayer = currentPlayer === player2 ? player1 : player2;
+    warningText.innerText = `It is ${currentPlayer}'s turn!`;
+    compTurn()
 
 
   };
